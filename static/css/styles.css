@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 .body {
   font-family: CalSans-SemiBold, sans-serif;
 }
@@ -81,6 +83,8 @@
   --tw-border-opacity: 1;
   border-color: rgba(231,232,236,var(--tw-border-opacity));
 }
+
+
 
 
 @keyframes spin {
