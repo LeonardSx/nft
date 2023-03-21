@@ -164,3 +164,12 @@
     top: 0;
   }
 }
+ 
+
+.texto:hover svg {
+  animation: none;
+}
+
+.texto:hover span {
+  opacity: 1;
+}
