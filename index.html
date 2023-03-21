@@ -35,30 +35,25 @@
     <!-- Navbar -->
     <header class="fixed top-0 z-20 w-full backdrop-blur transition-colors">
       <div class="flex items-center px-6 py-6 xl:px-24">
-        <a class="shrink-0" href="http://">
-          <img
-            class="max-h-7"
-            src="https://www.planeblocks.com/assets/themes/planeblocks/img/logo_blocks.png"
-            alt="Image Cyber"
-          />
+        <a class="shrink-0" href="#home">
+          <img class="max-h-7" src="img.jpg" alt="">
         </a>
         <div
           class="invisible lg:visible fixed inset-0 z-10 ml-auto items-center bg-white opacity-0 lg:relative lg:inset-auto lg:flex lg:bg-transparent lg:opacity-100"
         >
           <nav class="w-full">
-            <ul class="flex flex-col lg:flex-row">
+            <ul class="flex flex-col lg:flex-row menu">
               <li>
                 <a
                   href="#home"
-                  class="flex items-center justify-between py-3.5 lg:px-5 hover:text-red-500"
-                  aria-expanded="false"
-                  >Home</a
-                >
+                  class="flex items-center justify-between py-3.5 lg:px-5 text-white hover:text-red-600 text-shadow" aria-expanded="false" style="transition: color 0.5s ease, text-shadow 0.5s ease;">
+                  Home
+              </a>
               </li>
               <li>
                 <a
                   href="#about"
-                  class="flex items-center justify-between py-3.5 lg:px-5 hover:text-red-500"
+                  class="flex items-center justify-between py-3.5 lg:px-5 text-white hover:text-red-500 text-shadow" aria-expanded="false" style="transition: color 0.5s ease, text-shadow 0.5s ease;"
                   aria-expanded="false"
                   >About us</a
                 >
@@ -66,27 +61,30 @@
               <li>
                 <a
                   href="#planes"
-                  class="flex items-center justify-between py-3.5 lg:px-5 hover:text-red-500"
+                  class="flex items-center justify-between py-3.5 lg:px-5 text-white hover:text-red-500 text-shadow" aria-expanded="false" style="transition: color 0.5s ease, text-shadow 0.5s ease;"
                   aria-expanded="false"
                   >Our planes</a
                 >
               </li>
               <li>
                 <a
-                  href=""
-                  class="flex items-center justify-between py-3.5 lg:px-5 hover:text-red-500"
+                  href="#faqs"
+                  class="flex items-center justify-between py-3.5 lg:px-5 text-white hover:text-red-500 text-shadow" aria-expanded="false" style="transition: color 0.5s ease, text-shadow 0.5s ease;"
                   aria-expanded="false"
                   >Roadmap</a
                 >
               </li>
               <li>
                 <a
-                  href=""
-                  class="flex items-center justify-between py-3.5 lg:px-5 hover:text-red-500"
+                  href="#contact"
+                  class="flex items-center justify-between py-3.5 lg:px-5 text-white hover:text-red-500 text-shadow" aria-expanded="false" style="transition: color 0.5s ease, text-shadow 0.5s ease;"
                   aria-expanded="false"
                   >Contacts</a
                 >
               </li>
+              <button class="boton" onclick="botonClicado()">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg" alt="Logo" class="logo">LOGIN METAMASK
+              </button>
             </ul>
           </nav>
         </div>
@@ -100,9 +98,7 @@
       <section
         class="relative py-20 md:pt-32 bg-cover bg-center bg-no-repeat after:absolute"
         id="home"
-        style="
-          background-image: url(https://www.planeblocks.com/assets/themes/planeblocks/img/backhome.jpg);
-        "
+        style="background-image: url(https://static.vecteezy.com/system/resources/previews/001/962/052/non_2x/dark-red-blurred-background-vector.jpg);"
       >
         <div class="container-xl">
           <div class="mx-auto max-w-2xl pt-24 text-center">
@@ -144,12 +140,6 @@
               </a>
             </div>
             <div class="mt-8 rounded-lg"></div>
-            <button
-              id="connect-metamask-btn"
-              class="rounded-xl bg-red-500 mt-4 py-3 px-8 text-center font-semibold text-black transition-all hover:bg-opac"
-            >
-              Connect with Wallet
-            </button>
           </div>
         </div>
         <div class="flex items-center justify-center mx-auto mt-8">
@@ -157,8 +147,8 @@
             class="block overflow-hidden rounded-2xl bg-clip-border p-[2px] text-center shadow-md transition-shadow hover:shadow-lg animate-gradient"
           >
             <div class="rounded-2xl p-4 bg-white">
-              <span class="block text-lg text-[#8DD059]">23</span>
-              <span>Online Days</span>
+              <span class="block text-lg text-black">23</span>
+              <span class="text-black">Online Days</span>
             </div>
           </div>
         </div>
@@ -483,19 +473,20 @@
 
       <!-- -->
       <section class="relative bg-opacity-100 bg-[#F5F8FA] py-24">
-        <div class="container max-w-screen-xl rounded-xl p-8 bg-opacity-100 bg-[#E7E8EC] text-center" style="margin: 0 auto;">
-          <div class="mx-auto rounded-xl ">
-
-          </div>
+        <div
+          class="container max-w-screen-xl rounded-xl p-8 bg-opacity-100 bg-[#E7E8EC] text-center"
+          style="margin: 0 auto"
+        >
+          <div class="mx-auto rounded-xl"></div>
           <h2 class="mb-2 text-center text-3xl font-medium dark:text-white">
             Invest and Earn!
           </h2>
-          <p class="text-lg text-[#545D79 ]">
+          <p class="text-lg text-[#545D79]">
             Here you can see the APR in real time of all our NFT Planes
           </p>
         </div>
       </section>
-      
+
       <!-- Section #4 - -->
     </main>
   </body>
