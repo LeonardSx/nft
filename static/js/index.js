@@ -1,4 +1,4 @@
-const loginButton = document.getElementById("connect_metamask");
+const connect_metamask = document.getElementById("connect_metamask");
 const walletTitle = document.getElementById("titulo_wallet");
 
 const API_URL = "<%= process.env.HOST %>/auth/v1/login";
@@ -16,12 +16,12 @@ const toggleSignOutButton = () => {
 const toggleButton = (action) => {
   if (!window.ethereum) {
     walletTitle.innerText = ERROR_META_MASK_NOT_INSTALLED;
-    loginButton.classList.add("bg-gray-500", "text-gray-100", "cursor-not-allowed");
+    connect_metamask.classList.add("bg-gray-500", "text-gray-100", "cursor-not-allowed");
     return false;
   }
-  loginButton.removeEventListener("click", loginWithMetaMask);
-  loginButton.removeEventListener("click", signOutOfMetaMask);
-  loginButton.addEventListener("click", action);
+  connect_metamask.removeEventListener("click", loginWithMetaMask);
+  connect_metamask.removeEventListener("click", signOutOfMetaMask);
+  connect_metamask.addEventListener("click", action);
 };
 
 const loginWithMetaMask = async () => {

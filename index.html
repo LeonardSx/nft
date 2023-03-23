@@ -21,15 +21,16 @@
 
     <!-- Favicon -->
     <link href="./dist/output.css" rel="stylesheet" />
-    <script src="../static/js/index.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src=" https://cdn.jsdelivr.net/npm/@preline/preline/dist/hs-ui.bundle.min.js "></script>
-    </head>
+
+  </head>
   <body>
     <!-- Navbar -->
-    <header class="fixed top-0 z-20 w-full backdrop-blur transition-colors">
+    <header class="fixed top-0 z-20 w-full bg-[#161616]">
       <div class="flex items-center px-6 py-6 xl:px-24">
         <a class="shrink-0" href="#home">
-          <img class="max-h-7" src="img.jpg" alt="">
+          <img class="max-h-7" src="img.jpg" alt="" />
         </a>
         <div
           class="invisible lg:visible fixed inset-0 z-10 ml-auto items-center bg-white opacity-0 lg:relative lg:inset-auto lg:flex lg:bg-transparent lg:opacity-100"
@@ -39,14 +40,19 @@
               <li>
                 <a
                   href="#home"
-                  class="flex items-center justify-between py-3.5 lg:px-5 text-white hover:text-red-600 text-shadow" aria-expanded="false" style="transition: color 0.5s ease, text-shadow 0.5s ease;">
+                  class="flex items-center justify-between py-3.5 lg:px-5 text-[#383836] hover:text-red-600 "
+                  aria-expanded="false"
+                  style="transition: color 0.5s ease, text-shadow 0.5s ease"
+                >
                   Home
-              </a>
+                </a>
               </li>
               <li>
                 <a
                   href="#about"
-                  class="flex items-center justify-between py-3.5 lg:px-5 text-white hover:text-red-500 text-shadow" aria-expanded="false" style="transition: color 0.5s ease, text-shadow 0.5s ease;"
+                  class="flex items-center justify-between py-3.5 lg:px-5  text-[#383836] hover:text-red-500 "
+                  aria-expanded="false"
+                  style="transition: color 0.5s ease, text-shadow 0.5s ease"
                   aria-expanded="false"
                   >About us</a
                 >
@@ -54,7 +60,9 @@
               <li>
                 <a
                   href="#planes"
-                  class="flex items-center justify-between py-3.5 lg:px-5 text-white hover:text-red-500 text-shadow" aria-expanded="false" style="transition: color 0.5s ease, text-shadow 0.5s ease;"
+                  class="flex items-center justify-between py-3.5 lg:px-5  text-[#383836] hover:text-red-500 "
+                  aria-expanded="false"
+                  style="transition: color 0.5s ease, text-shadow 0.5s ease"
                   aria-expanded="false"
                   >Planes</a
                 >
@@ -62,7 +70,9 @@
               <li>
                 <a
                   href="#faqs"
-                  class="flex items-center justify-between py-3.5 lg:px-5 text-white hover:text-red-500 text-shadow" aria-expanded="false" style="transition: color 0.5s ease, text-shadow 0.5s ease;"
+                  class="flex items-center justify-between py-3.5 lg:px-5  text-[#383836] hover:text-red-500 "
+                  aria-expanded="false"
+                  style="transition: color 0.5s ease, text-shadow 0.5s ease"
                   aria-expanded="false"
                   >Faqs</a
                 >
@@ -70,13 +80,19 @@
               <li>
                 <a
                   href="#contact"
-                  class="flex items-center justify-between py-3.5 lg:px-5 text-white hover:text-red-500 text-shadow" aria-expanded="false" style="transition: color 0.5s ease, text-shadow 0.5s ease;"
+                  class="flex items-center justify-between py-3.5 lg:px-5  text-[#383836] hover:text-red-500 "
+                  aria-expanded="false"
+                  style="transition: color 0.5s ease, text-shadow 0.5s ease"
                   aria-expanded="false"
                   >Contact</a
                 >
               </li>
               <button class="boton" id="connect_metamask">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg" alt="Logo" class="logo">CONNECT METAMASK
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg"
+                  alt="Logo"
+                  class="logo"
+                />CONNECT METAMASK
               </button>
             </ul>
           </nav>
@@ -91,7 +107,9 @@
       <section
         class="relative py-20 md:pt-32 bg-cover bg-center bg-no-repeat after:absolute"
         id="home"
-        style="background-image: url(https://static.vecteezy.com/system/resources/previews/001/962/052/non_2x/dark-red-blurred-background-vector.jpg);"
+        style="
+          background-image: url(https://static.vecteezy.com/system/resources/previews/001/962/052/non_2x/dark-red-blurred-background-vector.jpg);
+        "
       >
         <div class="container-xl">
           <div class="mx-auto max-w-2xl pt-24 text-center">
@@ -112,26 +130,24 @@
             <br />
             <div class="fixed bottom-0 right-0 z-10">
               <div
-              class="flex space-x-5 justify-center items-center mx-auto mb-8 animate-bounce infinite"
-            >
-              <a href="" class="relative texto">
-                <!-- Telegram -->
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="70"
-                  height="70"
-                  fill="currentColor"
-                  class="h-11 w-11 fill-red-800 transform hover:scale-125 transition-all duration-300"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"
-                  ></path>
-                </svg>
-               
-              </a>
-             
-            </div>
+                class="flex space-x-5 justify-center items-center mx-auto mb-8 animate-bounce infinite"
+              >
+                <a href="" class="relative texto">
+                  <!-- Telegram -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="70"
+                    height="70"
+                    fill="currentColor"
+                    class="h-11 w-11 fill-red-800 transform hover:scale-125 transition-all duration-300"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"
+                    ></path>
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
         </div>
