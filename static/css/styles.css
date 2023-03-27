@@ -1,0 +1,57 @@
+.boton {
+  background-color: #8B0000;
+  border: 2px solid #FF7F7F;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boton:hover {
+  animation: saltar 0.9s ease-in-out infinite;
+}
+
+.logo {
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+}
+
+
+.text-shadow {
+  text-shadow: 0 0 5px #ff073a, 0 0 10px #ff073a, 0 0 15px #ff073a, 0 0 20px #ff073a;
+}
+
+@keyframes saltar {
+  0% {
+    top: 0;
+  }
+  25% {
+    top: -5px;
+  }
+  50% {
+    top: 0;
+  }
+  75% {
+    top: -5px;
+  }
+  100% {
+    top: 0;
+  }
+}
+ 
+.texto:hover svg {
+  animation: none;
+}
+
+.texto:hover span {
+  opacity: 1;
+}
