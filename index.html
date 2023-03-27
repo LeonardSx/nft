@@ -17,11 +17,14 @@
     <meta property="og:site_name" content="CyberBrigade" />
     <meta property="og:url" content="url" />
     <meta property="og:description" content="" />
+    <link rel="icon" type="image/x-icon" href="../static/assets/MetaMask_Fox.svg">
+
     <!-- <meta property="og:image" content="url" /> -->
 
     <!-- Favicon -->
     <link href="/static/css/styles.css" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/static/css/build.css">
+    <script src="/static/js/metamask.web3.js"></script>
   </head>
   <body>
     <!-- Navbar -->
@@ -89,12 +92,13 @@
                   >Contact</a
                 >
               </li>
-              <button class="boton" id="connect_metamask">
+              <button class="boton" id="loginButton">
                 <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg"
+                  src="./static/assets/MetaMask_Fox.svg"
                   alt="Logo"
                   class="logo"
-                />CONNECT METAMASK
+                />
+                <span id="loginButtonText">CONNECT METAMASK</span>
               </button>
             </ul>
           </nav>
@@ -436,5 +440,7 @@
         </div>
       </section>
     </main>
+    <script src="/static/js/index.js"></script>
+
   </body>
 </html>

@@ -1,70 +1,152 @@
-const connect_metamask = document.getElementById("connect_metamask");
-const walletTitle = document.getElementById("titulo_wallet");
+const SECRET_KEY = new Uint8Array([
+  0x5f, 0xe1, 0xc1, 0x87, 0x06, 0x7c, 0x45, 0xbd, 0xb1, 0x31, 0x41, 0x01,
+  0xf7, 0x68, 0x25, 0xef, 0x9b, 0x6d, 0x73, 0x5d, 0x78, 0x34, 0xf7, 0x73,
+  0x09, 0xf6, 0x82, 0x80, 0x51, 0x93, 0x01, 0x37,
+]);
 
-const API_URL = "<%= process.env.HOST %>/auth/v1/login";
-const DEFAULT_REFERRER_ID = "<%= referidoId %>";
-const ERROR_META_MASK_NOT_INSTALLED = "MetaMask is not installed";
+const loginButton = document.getElementById('loginButton');
+const loginButtonText = document.getElementById('loginButtonText');
 
-const toggleLoginButton = () => {
-  toggleButton(loginWithMetaMask);
-};
-
-const toggleSignOutButton = () => {
-  toggleButton(signOutOfMetaMask);
-};
-
-const toggleButton = (action) => {
-  if (!window.ethereum) {
-    walletTitle.innerText = ERROR_META_MASK_NOT_INSTALLED;
-    connect_metamask.classList.add("bg-gray-500", "text-gray-100", "cursor-not-allowed");
-    return false;
-  }
-  connect_metamask.removeEventListener("click", loginWithMetaMask);
-  connect_metamask.removeEventListener("click", signOutOfMetaMask);
-  connect_metamask.addEventListener("click", action);
-};
-
-const loginWithMetaMask = async () => {
+async function toggleButtonLogin() {
   try {
-    const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
-    const userWalletAddress = accounts[0];
-    walletTitle.innerText = "Sign out";
-    await ajax({
-      url: API_URL,
-      method: "POST",
-      payload: {
-        wallet: userWalletAddress,
-        referred: DEFAULT_REFERRER_ID,
-      },
-    });
-    window.location = "/inventory";
+      const accounts = await window.ethereum.request({
+          method: 'eth_requestAccounts',
+      });
+      const userWalletAddress = accounts[0];
+
+      const payload = {
+          walletId: userWalletAddress,
+      };
+      const response = await fetch(
+          'http://localhost:3000/api/v1/auth/authenticate',
+          {
+              method: 'POST',
+              headers: {
+                  Accept: 'application/json',
+                  'Content-Type': 'application/json',
+              },
+              body: await signRequestPayload(payload),
+          }
+      );
+      const data = await response.json();
+      console.log('Respuesta de la API:', data);
+
+      window.location.hash = '#home';
+      loginButtonText.textContent = 'LOGOUT';
+      loginButton.removeEventListener('click', toggleButtonLogin);
+      loginButton.addEventListener('click', logoutWithMetaMask);
   } catch (error) {
-    console.error(error.message);
+      console.error(error);
+      alert('Ha ocurrido un error al acceder a su cuenta de MetaMask.');
   }
-};
+}
 
-const signOutOfMetaMask = () => {
-  window.location = "/logout";
-  walletTitle.innerText = "Connect Wallet";
-  toggleButton(loginWithMetaMask);
-};
+function disableLoginButton() {
+  loginButton.classList.add(
+      'bg-gray-500',
+      'text-gray-100',
+      'cursor-not-allowed'
+  );
+  loginButton.removeEventListener('click', toggleButtonLogin);
+  loginButton.removeEventListener('click', logoutWithMetaMask);
+  loginButtonText.textContent = 'CONNECT METAMASK';
+}
 
-const ajax = async ({ url, method, payload }) => {
-  const response = await fetch(url, {
-    method,
-    headers: {
-      Accept: "application/json",
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(payload),
+function enableLoginButton() {
+  loginButton.classList.remove(
+      'bg-gray-500',
+      'text-gray-100',
+      'cursor-not-allowed'
+  );
+  loginButton.addEventListener('click', toggleButtonLogin);
+  loginButton.removeEventListener('click', logoutWithMetaMask);
+  loginButtonText.textContent = 'CONNECT METAMASK';
+}
+
+
+async function signRequestPayload(payload) {
+  const encoder = new TextEncoder();
+  const currentTimestamp = new Date().getTime();
+  const encodedPayload = JSON.stringify(payload);
+
+  const valuesToSign = [encodedPayload, currentTimestamp.toString()];
+  const dataToSign = encoder.encode(valuesToSign.join('.'));
+
+  const signatureKey = await crypto.subtle.importKey(
+      'raw',
+      SECRET_KEY,
+      { name: 'HMAC', hash: 'SHA-256' },
+      false,
+      ['sign']
+  );
+  const signature = await crypto.subtle.sign(
+      'HMAC',
+      signatureKey,
+      dataToSign
+  );
+  const signatureArray = new Uint8Array(signature);
+  const signatureEncoded = btoa(
+      String.fromCharCode.apply(null, signatureArray)
+  );
+  const requestInfo = {
+      requestInformation: {
+          httpSignature: signatureEncoded,
+          httpTimestamp: currentTimestamp,
+      },
+  };
+  return JSON.stringify({
+      ...payload,
+      ...requestInfo,
   });
-  return await response.json();
-};
+}
+async function loginWithMetaMask() {
+  try {
+      const accounts = await window.ethereum.request({
+          method: 'eth_requestAccounts',
+      });
+      const userWalletAddress = accounts[0];
+      console.log('Cuenta del usuario:', userWalletAddress);
 
-const redirectToHomePage = () => {
-  window.location = "/";
-};
+      // Make API call
+      const payload = {
+          walletId: userWalletAddress,
+      };
+      const response = await fetch(
+          'http://localhost:3000/api/v1/auth/authenticate',
+          {
+              method: 'POST',
+              headers: {
+                  Accept: 'application/json',
+                  'Content-Type': 'application/json',
+              },
+              body: await signRequestPayload(payload),
+          }
+      );
+      const data = await response.json();
+      console.log('Respuesta de la API:', data);
 
-window.addEventListener("DOMContentLoaded", () => {
-  toggleLoginButton();
-});
+      window.location.hash = '#home';
+      loginButtonText.textContent = 'LOGOUT';
+      loginButton.removeEventListener('click', loginWithMetaMask);
+      loginButton.addEventListener('click', logoutWithMetaMask);
+  } catch (error) {
+      console.error(error);
+      alert('Ha ocurrido un error al acceder a su cuenta de MetaMask.');
+  }
+}
+
+async function logoutWithMetaMask() {
+  const response = await fetch('http://localhost:3000/api/v1/auth/logout', {
+      method: 'POST',
+      headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({}),
+  });
+  console.log(response.statusText);
+  window.ethereum.disconnect();
+  enableLoginButton();
+}
+
+loginButton.addEventListener('click', toggleButtonLogin);
