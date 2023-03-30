@@ -7,6 +7,7 @@ const SECRET_KEY = new Uint8Array([
 const loginButton = document.getElementById('loginButton');
 const loginButtonText = document.getElementById('loginButtonText');
 
+
 async function toggleButtonLogin() {
   try {
       const accounts = await window.ethereum.request({
@@ -29,17 +30,29 @@ async function toggleButtonLogin() {
           }
       );
       const data = await response.json();
-      console.log('Respuesta de la API:', data);
 
       window.location.hash = '#home';
       loginButtonText.textContent = 'LOGOUT';
       loginButton.removeEventListener('click', toggleButtonLogin);
       loginButton.addEventListener('click', logoutWithMetaMask);
+	  localStorage.setItem('userWalletAddress', userWalletAddress);
   } catch (error) {
       console.error(error);
       alert('Ha ocurrido un error al acceder a su cuenta de MetaMask.');
   }
 }
+
+function init() {
+  const userWalletAddress = localStorage.getItem('userWalletAddress');
+  if (userWalletAddress) {
+    toggleButtonLogin();
+  } else {
+    enableLoginButton();
+  }
+}
+
+init();
+
 
 function disableLoginButton() {
   loginButton.classList.add(
@@ -123,7 +136,6 @@ async function loginWithMetaMask() {
           }
       );
       const data = await response.json();
-      console.log('Respuesta de la API:', data);
 
       window.location.hash = '#home';
       loginButtonText.textContent = 'LOGOUT';
@@ -133,6 +145,7 @@ async function loginWithMetaMask() {
       console.error(error);
       alert('Ha ocurrido un error al acceder a su cuenta de MetaMask.');
   }
+
 }
 
 async function logoutWithMetaMask() {
@@ -144,9 +157,15 @@ async function logoutWithMetaMask() {
       },
       body: JSON.stringify({}),
   });
-  console.log(response.statusText);
-  window.ethereum.disconnect();
+
+  window.localStorage.removeItem('userWalletAddress');
+
+  if (window.ethereum && window.ethereum.disconnect) {
+      window.ethereum.disconnect();
+  }
+
   enableLoginButton();
 }
+
 
 loginButton.addEventListener('click', toggleButtonLogin);
