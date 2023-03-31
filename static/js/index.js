@@ -8,6 +8,23 @@ const loginButton = document.getElementById('loginButton');
 const loginButtonText = document.getElementById('loginButtonText');
 const navItems = document.querySelectorAll('.menu li:not(:last-child)');
 
+function showWhenNotLoggedIn() {
+  document.querySelectorAll('.when-not-logged-in').forEach(item => {
+    item.classList.add('show');
+  });
+  document.querySelectorAll('.when-logged-in').forEach(item => {
+    item.classList.remove('show');
+  });
+}
+
+function showWhenLoggedIn() {
+  document.querySelectorAll('.when-logged-in').forEach(item => {
+    item.classList.add('show');
+  });
+  document.querySelectorAll('.when-not-logged-in').forEach(item => {
+    item.classList.remove('show');
+  });
+}
 
 async function toggleButtonLogin() {
   try {
@@ -32,16 +49,12 @@ async function toggleButtonLogin() {
       );
       const data = await response.json();
 
-	
       loginButtonText.textContent = 'LOGOUT';
       loginButton.removeEventListener('click', toggleButtonLogin);
       loginButton.addEventListener('click', logoutWithMetaMask);
-	  localStorage.setItem('userWalletAddress', userWalletAddress);
+      localStorage.setItem('userWalletAddress', userWalletAddress);
 
-
-	    navItems.forEach(item => {
-      item.classList.add('hidden');
-    });
+      showWhenLoggedIn();
   } catch (error) {
       console.error(error);
       alert('Ha ocurrido un error al acceder a su cuenta de MetaMask.');
@@ -51,8 +64,9 @@ async function toggleButtonLogin() {
 function init() {
   const userWalletAddress = localStorage.getItem('userWalletAddress');
   if (userWalletAddress) {
-    toggleButtonLogin();
+    showWhenLoggedIn();
   } else {
+    showWhenNotLoggedIn();
     enableLoginButton();
   }
 }
