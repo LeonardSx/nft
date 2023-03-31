@@ -6,6 +6,7 @@ const SECRET_KEY = new Uint8Array([
 
 const loginButton = document.getElementById('loginButton');
 const loginButtonText = document.getElementById('loginButtonText');
+const navItems = document.querySelectorAll('.menu li:not(:last-child)');
 
 
 async function toggleButtonLogin() {
@@ -31,11 +32,16 @@ async function toggleButtonLogin() {
       );
       const data = await response.json();
 
-      window.location.hash = '#home';
+	
       loginButtonText.textContent = 'LOGOUT';
       loginButton.removeEventListener('click', toggleButtonLogin);
       loginButton.addEventListener('click', logoutWithMetaMask);
 	  localStorage.setItem('userWalletAddress', userWalletAddress);
+
+
+	    navItems.forEach(item => {
+      item.classList.add('hidden');
+    });
   } catch (error) {
       console.error(error);
       alert('Ha ocurrido un error al acceder a su cuenta de MetaMask.');

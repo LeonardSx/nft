@@ -35,7 +35,7 @@
         >
           <nav class="w-full">
             <ul class="flex flex-col lg:flex-row menu">
-              <li>
+              <li class="when-not-logged-in">
                 <a
                   href="#home"
                   class="flex items-center justify-between py-3.5 lg:px-5 text-gray-600 hover:text-red-600"
@@ -45,7 +45,7 @@
                   Home
                 </a>
               </li>
-              <li>
+              <li class="when-not-logged-in" >
                 <a
                   href="#about"
                   class="flex items-center justify-between py-3.5 lg:px-5 text-gray-600 hover:text-red-500"
@@ -55,7 +55,7 @@
                   >About us</a
                 >
               </li>
-              <li>
+              <li class="when-not-logged-in" >
                 <a
                   href="#planes"
                   class="flex items-center justify-between py-3.5 lg:px-5 text-gray-600 hover:text-red-500"
@@ -65,7 +65,7 @@
                   >Planes</a
                 >
               </li>
-              <li>
+              <li class="when-not-logged-in" >
                 <a
                   href="#faqs"
                   class="flex items-center justify-between py-3.5 lg:px-5 text-gray-600 hover:text-red-500"
@@ -75,7 +75,7 @@
                   >Faqs</a
                 >
               </li>
-              <li>
+              <li class="when-not-logged-in" >
                 <a
                   href="#contact"
                   class="flex items-center justify-between py-3.5 lg:px-5 text-gray-600 hover:text-red-500"
@@ -85,6 +85,13 @@
                   >Contact</a
                 >
               </li>
+			 
+              <li class="hidden when-logged-in">
+              <a href="#dashboard" class="flex items-center justify-between py-3.5 lg:px-5 text-gray-600 hover:text-red-500" aria-expanded="false" style="transition: color 0.5s ease, text-shadow 0.5s ease">Dashboard</a>
+            </li>
+            <li class="hidden when-logged-in">
+              <a href="#inventory" class="flex items-center justify-between py-3.5 lg:px-5 text-gray-600 hover:text-red-500" aria-expanded="false" style="transition: color 0.5s ease, text-shadow 0.5s ease">Inventory</a>
+            </li>
               <button class="boton" id="loginButton">
                 <img
                   src="./static/assets/MetaMask_Fox.svg"
