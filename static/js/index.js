@@ -26,7 +26,13 @@ function showWhenLoggedIn() {
   });
 }
 
+
 async function toggleButtonLogin() {
+  const userWalletAddress = localStorage.getItem('userWalletAddress');
+
+	if (userWalletAddress) {
+     await logoutWithMetaMask();
+	} else { 
   try {
       const accounts = await window.ethereum.request({
           method: 'eth_requestAccounts',
@@ -49,16 +55,18 @@ async function toggleButtonLogin() {
       );
       const data = await response.json();
 
+
+      localStorage.setItem('userWalletAddress', payload.walletId);
       loginButtonText.textContent = 'LOGOUT';
       loginButton.removeEventListener('click', toggleButtonLogin);
-      loginButton.addEventListener('click', logoutWithMetaMask);
-      localStorage.setItem('userWalletAddress', userWalletAddress);
-
-      showWhenLoggedIn();
+      loginButton.addEventListener('click', toggleButtonLogin);
+	  
+    showWhenLoggedIn();
   } catch (error) {
       console.error(error);
       alert('Ha ocurrido un error al acceder a su cuenta de MetaMask.');
   }
+ }
 }
 
 function init() {
