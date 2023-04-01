@@ -15,7 +15,7 @@ async function logoutWithMetaMask() {
         window.ethereum.disconnect();
       }
   
-      window.location.href = "index.html"; // Redirige al usuario a la página de inicio de sesión después de cerrar sesión
+      window.location.href = "index.html";
   
       console.log("Logged out with MetaMask");
     } catch (error) {
