@@ -10,8 +10,7 @@ async function signRequestPayload(payload) {
   const currentTimestamp = new Date().getTime();
   const encodedPayload = JSON.stringify(payload);
 
-  const valuesToSign = [encodedPayload, currentTimestamp.toString()];
-  const dataToSign = encoder.encode(valuesToSign.join("."));
+  const dataToSign = encoder.encode(`${encodedPayload}.${currentTimestamp}`);
 
   const signatureKey = await crypto.subtle.importKey(
     "raw",
@@ -39,15 +38,22 @@ async function signRequestPayload(payload) {
 
 
 const connectButton = document.getElementById('connectButton');
+const logoutButton = document.getElementById('logoutButton');
+const menuLoggedOut = document.getElementById('menu-logged-out');
+const menuLoggedIn = document.getElementById('menu-logged-in');
 
 function setLoggedIn() {
-  connectButton.classList.add('logged-in'); 
-  connectButton.querySelector('#connectButtonText').innerText = 'LOGOUT'; 
+  connectButton.classList.add('hidden');
+  logoutButton.classList.remove('hidden');
+  menuLoggedOut.classList.add('hidden');
+  menuLoggedIn.classList.remove('hidden'); 
 }
 
 function setLoggedOut() {
-  connectButton.classList.remove('logged-in');
-  connectButton.querySelector('#connectButtonText').innerText = 'CONNECT'; 
+  connectButton.classList.remove('hidden');
+  logoutButton.classList.add('hidden');
+  menuLoggedOut.classList.remove('hidden');
+  menuLoggedIn.classList.add('hidden'); 
 }
 
 async function validateConnection() {
@@ -123,9 +129,14 @@ window.addEventListener('storage', (event) => {
 });
 
 connectButton.addEventListener('click', () => {
-  if (connectButton.classList.contains('logged-in')) {
+  if (connectButton.classList.contains('hidden')) {
     logoutWithMetaMask();
   } else {
     connectWithMetaMask();
   }
+});
+
+
+logoutButton.addEventListener('click', () => {
+  logoutWithMetaMask();
 });

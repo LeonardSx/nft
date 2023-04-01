@@ -44,7 +44,7 @@
           class="invisible lg:visible fixed inset-0 z-10 ml-auto items-center bg-white opacity-0 lg:relative lg:inset-auto lg:flex lg:bg-transparent lg:opacity-100"
         >
           <nav class="w-full">
-            <ul class="flex flex-col lg:flex-row menu">
+            <ul class="flex flex-col lg:flex-row menu" id="menu-logged-out">
               <li>
                 <a
                   href="#home"
@@ -96,9 +96,33 @@
                 >
               </li>
               <button class="boton" id="connectButton">
-                <img src="./static/assets/MetaMask_Fox.svg" alt="Logo" class="logo" />
+                <img
+                  src="./static/assets/MetaMask_Fox.svg"
+                  alt="Logo"
+                  class="logo"
+                />
                 <span id="connectButtonText">CONNECT</span>
-            </button>
+              </button>
+            </ul>
+            <ul class="flex flex-col lg:flex-row menu" id="menu-logged-in">
+              <li>
+                <a
+                  href="#home"
+                  class="flex items-center justify-between py-3.5 lg:px-5 text-gray-600 hover:text-red-600"
+                  aria-expanded="false"
+                  style="transition: color 0.5s ease, text-shadow 0.5s ease"
+                >
+                  Dashboard
+                </a>
+              </li>
+              <button class="boton" id="logoutButton">
+                <img
+                  src="./static/assets/MetaMask_Fox.svg"
+                  alt="Logo"
+                  class="logo"
+                />
+                <span id="connectButtonText">LOGOUT</span>
+              </button>
             </ul>
           </nav>
         </div>
