@@ -4,7 +4,6 @@ const SECRET_KEY = new Uint8Array([
   0x82, 0x80, 0x51, 0x93, 0x01, 0x37,
 ]);
 
-
 async function signRequestPayload(payload) {
   const encoder = new TextEncoder();
   const currentTimestamp = new Date().getTime();
@@ -36,39 +35,38 @@ async function signRequestPayload(payload) {
   });
 }
 
-
-const connectButton = document.getElementById('connectButton');
-const logoutButton = document.getElementById('logoutButton');
-const menuLoggedOut = document.getElementById('menu-logged-out');
-const menuLoggedIn = document.getElementById('menu-logged-in');
+const connectButton = document.getElementById("connectButton");
+const logoutButton = document.getElementById("logoutButton");
+const menuLoggedOut = document.getElementById("menu-logged-out");
+const menuLoggedIn = document.getElementById("menu-logged-in");
 
 function setLoggedIn() {
-  connectButton.classList.add('hidden');
-  logoutButton.classList.remove('hidden');
-  menuLoggedOut.classList.add('hidden');
-  menuLoggedIn.classList.remove('hidden'); 
+  connectButton.classList.add("hidden");
+  logoutButton.classList.remove("hidden");
+  menuLoggedOut.classList.add("hidden");
+  menuLoggedIn.classList.remove("hidden");
 }
 
 function setLoggedOut() {
-  connectButton.classList.remove('hidden');
-  logoutButton.classList.add('hidden');
-  menuLoggedOut.classList.remove('hidden');
-  menuLoggedIn.classList.add('hidden'); 
+  connectButton.classList.remove("hidden");
+  logoutButton.classList.add("hidden");
+  menuLoggedOut.classList.remove("hidden");
+  menuLoggedIn.classList.add("hidden");
 }
 
 async function validateConnection() {
-  const userWalletAddress = window.localStorage.getItem('userWalletAddress');
+  const userWalletAddress = window.localStorage.getItem("userWalletAddress");
   if (userWalletAddress) {
-    setLoggedIn(); 
+    setLoggedIn();
   } else {
-    setLoggedOut(); 
+    setLoggedOut();
   }
 }
 
 async function connectWithMetaMask() {
   try {
     const accounts = await window.ethereum.request({
-      method: 'eth_requestAccounts',
+      method: "eth_requestAccounts",
     });
     const userWalletAddress = accounts[0];
 
@@ -76,21 +74,22 @@ async function connectWithMetaMask() {
       walletId: userWalletAddress,
     };
     const response = await fetch(
-      'http://localhost:3000/api/v1/auth/authenticate',
+      "http://localhost:3000/api/v1/auth/authenticate",
       {
-        method: 'POST',
+        method: "POST",
         headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
+          Accept: "application/json",
+          "Content-Type": "application/json",
         },
         body: await signRequestPayload(payload),
       }
     );
     const data = await response.json();
-    window.localStorage.setItem('userWalletAddress', userWalletAddress);
+    window.localStorage.setItem("userWalletAddress", userWalletAddress);
 
-    validateConnection(); 
-    console.log('Connected with MetaMask');
+    validateConnection();
+    console.log("Connected with MetaMask");
+    window.location.href = "dashboard.html";
   } catch (error) {
     console.error(error);
   }
@@ -98,23 +97,23 @@ async function connectWithMetaMask() {
 
 async function logoutWithMetaMask() {
   try {
-    const response = await fetch('http://localhost:3000/api/v1/auth/logout', {
-      method: 'POST',
+    const response = await fetch("http://localhost:3000/api/v1/auth/logout", {
+      method: "POST",
       headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
+        Accept: "application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({}),
     });
 
-    window.localStorage.removeItem('userWalletAddress');
+    window.localStorage.removeItem("userWalletAddress");
 
     if (window.ethereum && window.ethereum.disconnect) {
       window.ethereum.disconnect();
     }
 
-    validateConnection(); 
-    console.log('Logged out with MetaMask');
+    validateConnection();
+    console.log("Logged out with MetaMask");
   } catch (error) {
     console.error(error);
   }
@@ -122,14 +121,14 @@ async function logoutWithMetaMask() {
 
 validateConnection();
 
-window.addEventListener('storage', (event) => {
-  if (event.key === 'userWalletAddress' && !event.newValue) {
-    console.log('User wallet address removed from local storage');
+window.addEventListener("storage", (event) => {
+  if (event.key === "userWalletAddress" && !event.newValue) {
+    console.log("User wallet address removed from local storage");
   }
 });
 
-connectButton.addEventListener('click', () => {
-  if (connectButton.classList.contains('hidden')) {
+connectButton.addEventListener("click", () => {
+  if (connectButton.classList.contains("hidden")) {
     logoutWithMetaMask();
   } else {
     connectWithMetaMask();
@@ -137,6 +136,7 @@ connectButton.addEventListener('click', () => {
 });
 
 
-logoutButton.addEventListener('click', () => {
+logoutButton.addEventListener("click", () => {
   logoutWithMetaMask();
 });
+
