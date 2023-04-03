@@ -29,7 +29,7 @@
     <script src="./static/js/logout.js"></script>
   </head>
   <body>
-    <div class="flex h-screen bg-gray-100">
+    <div class="fixed top-0 left-0 right-0 bottom-0 flex bg-gray-100">
       <!-- Navbar -->
       <div class="flex flex-col w-48 bg-[#161616] border-r">
         <div class="flex flex-col items-center mt-6">
@@ -59,8 +59,8 @@
             </div>
           
             <!-- Avatar -->
-            <div class="rounded-full w-16 h-16 overflow-hidden my-20">
-              <img src="./static/assets/cripto-santa-variante-nft-personaje-criptografico-navideno-mono-disfrazado-santa-claus-imagen-vectorial_155957-1361.avif" alt="avatar">
+            <div class="rounded-full w-20 h-20 overflow-hidden my-20" id="avatar-container">
+              <img src="#" alt="avatar" id="avatar-img">
             </div>
           </div>
           
@@ -85,10 +85,24 @@
             </button>
           </div>
         </header>
-        <main class="flex-1 p-4">
-          <!-- Contenido principal de la página -->
-        </main>
+        <div class="flex items-center justify-center h-full">
+          <div class="max-w-xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden p-6">
+            <h2 class="text-3xl font-bold mb-4 text-center">BNB FARMING</h2>
+            <p class="text-lg mb-6 text-center">We're excited that you've decided to join our community. Our website provides useful tools and valuable resources for farming BNB. We're committed to making your experience enjoyable and successful.</p>
+            <form class="mb-2">
+              <div class="mb-4">
+                <label class="block text-gray-700 font-bold mb-2" for="email">Email Address:</label>
+                <input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Enter your email address" />
+              </div>
+              <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full" type="button">Sign Up</button>
+            </form>
+            <p class="text-sm text-center">Thank you for joining us! Please verify your email address to unlock all the features of our platform and start farming BNB.</p>
+          </div>
+          
+          
+        </div>
       </div>
     </div>
+    <script src="./static/js/profile.js"></script>
   </body>
 </html>
