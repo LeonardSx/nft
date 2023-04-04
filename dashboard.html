@@ -25,84 +25,224 @@
     <link rel="stylesheet" href="./static/css/build.css" />
     <script src="./static/js/metamask.web3.js"></script>
     <script src="./static/js/tailwindcss.js"></script>
-    <script src="./static/js/auth.js"></script>
-    <script src="./static/js/logout.js"></script>
+    <script src="./static/js/logout.js"></script> 
   </head>
   <body>
-    <div class="fixed top-0 left-0 right-0 bottom-0 flex bg-gray-100">
-      <!-- Navbar -->
-      <div class="flex flex-col w-48 bg-[#161616] border-r">
-        <div class="flex flex-col items-center mt-6">
-          <!-- Flecha -->
-          <img class="w-32" src="https://i.postimg.cc/crcCjtMp/logo.png" alt="LOGO" />
-          <hr class="border-white border-t-1 w-40 my-5" />
-          <!-- Opciones del navbar -->
-          <div class="flex flex-col items-center justify-between h-full py-6 px-4 text-white">          
-            <!-- Opciones del navbar -->
-            <div class="mt-6 space-y-6">
-              <a href="#" class="flex items-center py-2 py-3.5 lg:px-5 text-gray-600 hover:text-red-500" style="transition: color 0.5s ease, text-shadow 0.5s ease">
-                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-                <span>Active plans</span>
-              </a>
-              <a href="#" class="flex items-center py-2 py-3.5 lg:px-5 text-gray-600 hover:text-red-500" style="transition: color 0.5s ease, text-shadow 0.5s ease">
-                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 3h6v18h-6zM3 9h6m-6 6h6"/></svg>
-                <span>My Farms</span>
-              </a>
-              <a href="#" class="flex items-center py-2 py-3.5 lg:px-5 text-gray-600 hover:text-red-500" style="transition: color 0.5s ease, text-shadow 0.5s ease">
-                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
-                <span>Invitations</span>
-              </a>
-              <a href="#" class="flex items-center py-2 py-3.5 lg:px-5 text-gray-600 hover:text-red-500" style="transition: color 0.5s ease, text-shadow 0.5s ease">
-                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 20v-6m0 0V4m0 6h6m-6 0H6"/></svg>
-                <span>Profile</span>
-              </a>
-            </div>
-          
-            <!-- Avatar -->
-            <div class="rounded-full w-20 h-20 overflow-hidden my-20" id="avatar-container">
-              <img src="#" alt="avatar" id="avatar-img">
-            </div>
+    
+    <header class="flex flex-col antialiased text-gray-800">
+        <div class="fixed top-0 left-0 w-64 h-full border-r ">
+          <div class="flex items-center justify-center h-14 border-b">
+            <div>Cyber brigade farm BNB</div>
           </div>
-          
+          <div class="overflow-y-auto overflow-x-hidden flex-grow">
+            <ul class="flex flex-col py-4 space-y-1">
+              <li class="px-5">
+                <div class="flex flex-row items-center h-8">
+                  <div class="text-sm font-light tracking-wide text-gray-500">
+                    Menu
+                  </div>
+                </div>
+              </li>
+              <li>
+                <a
+                  href="#dashboard"
+                  class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-red-500 border-l-4 border-transparent hover:border-red-500 pr-6 etiqueta-link active"
+                  style="transition: color 0.5s ease, text-shadow 0.5s ease"
+                >
+                  <span class="inline-flex justify-center items-center ml-4">
+                    <svg
+                      class="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                      ></path>
+                    </svg>
+                  </span>
+                  <span class="ml-2 text-sm tracking-wide truncate"
+                    >Dashboard</span
+                  >
+                </a>
+              </li>
+              <li class="px-5">
+                <div class="flex flex-row items-center h-8">
+                  <div class="text-sm font-light tracking-wide text-gray-500">
+                    Farming
+                  </div>
+                </div>
+              </li>
+              <li>
+                <a
+                  href="#farms"
+                  class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-red-500 border-l-4 border-transparent hover:border-red-500 pr-6 etiqueta-link"
+                  style="transition: color 0.5s ease, text-shadow 0.5s ease"
+                >
+                  <span class="inline-flex justify-center items-center ml-4">
+                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-farming">
+                      <path d="M5 12l5-5L19 7l-5 5M5 12l5 5l9-5l-5-5" />
+                      <path d="M5 3v6M5 21v-6M19 3v6M19 21v-6" />
+                    </svg>
+                  </span>
+                  <span class="ml-2 text-sm tracking-wide truncate">My farms</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#plans-actives"
+                  class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-red-500 border-l-4 border-transparent hover:border-red-500 pr-6 etiqueta-link"
+                  style="transition: color 0.5s ease, text-shadow 0.5s ease"
+                >
+                  <span class="inline-flex justify-center items-center ml-4">
+                    <svg                     class="w-5 h-5"
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plan">
+                      <path d="M4 4h16v16H4z" />
+                      <path d="M9 18l-3-3h12l-3 3" />
+                      <path d="M15 6l3 3H6l3-3" />
+                      <path d="M6 12h12M12 6v12" />
+                    </svg>
+                  </span>
+                  <span class="ml-2 text-sm tracking-wide truncate"
+                    >Active plans</span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#invitations"
+                  class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-red-500 border-l-4 border-transparent hover:border-red-500 pr-6 etiqueta-link"
+                  style="transition: color 0.5s ease, text-shadow 0.5s ease"
+                >
+                  <span class="inline-flex justify-center items-center ml-4">
+                    <svg class="w-5 h-5"
+                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-invitation">
+                      <path d="M16 3l6 6v12H2V3h14z" />
+                      <path d="M16 9l-4 4M12 9l4 4" />
+                      <path d="M7 14h10M7 17h10" />
+                    </svg>
+                  </span>
+                  <span class="ml-2 text-sm tracking-wide truncate"
+                    >Invitations</span
+                  >
+                </a>
+              </li>
+              <li class="px-5">
+                <div class="flex flex-row items-center h-8">
+                  <div class="text-sm font-light tracking-wide text-gray-500">
+                    Settings
+                  </div>
+                </div>
+              </li>
+              <li>
+                <a
+                  href="#profile"
+                  class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-red-500 border-l-4 border-transparent hover:border-red-500 pr-6 etiqueta-link"
+                  style="transition: color 0.5s ease, text-shadow 0.5s ease"
+                >
+                  <span class="inline-flex justify-center items-center ml-4">
+                    <svg
+                      class="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                      ></path>
+                    </svg>
+                  </span>
+                  <span class="ml-2 text-sm tracking-wide truncate">Profile</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-red-500 border-l-4 border-transparent hover:border-red-500 pr-6"
+                  style="transition: color 0.5s ease, text-shadow 0.5s ease"
+                >
+                  <span class="inline-flex justify-center items-center ml-4">
+                    <svg
+                      class="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+                      ></path>
+                    </svg>
+                  </span>
+                  <span class="ml-2 text-sm tracking-wide truncate">Logout</span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <!-- Contenido principal -->
-      <div class="flex flex-col flex-1">
-        <header class="bg-[#161616] shadow">
-          <div class="flex items-center justify-between px-4 py-3">
-            <h1 class="text-lg text-white">Dashboard</h1>
-            <button
-              class="boton"
-              id="logoutButton"
-              onclick="logoutWithMetaMask()"
-            >
-              <img
-                src="./static/assets/MetaMask_Fox.svg"
-                alt="Logo"
-                class="logo"
-              />
-              <span id="connectButtonText">LOGOUT</span>
-            </button>
-          </div>
-        </header>
-        <div class="flex items-center justify-center h-full">
-          <div class="max-w-xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden p-6">
-            <h2 class="text-3xl font-bold mb-4 text-center">BNB FARMING</h2>
-            <p class="text-lg mb-6 text-center">We're excited that you've decided to join our community. Our website provides useful tools and valuable resources for farming BNB. We're committed to making your experience enjoyable and successful.</p>
-            <form class="mb-2">
-              <div class="mb-4">
-                <label class="block text-gray-700 font-bold mb-2" for="email">Email Address:</label>
-                <input class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="Enter your email address" />
-              </div>
-              <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full" type="button">Sign Up</button>
-            </form>
-            <p class="text-sm text-center">Thank you for joining us! Please verify your email address to unlock all the features of our platform and start farming BNB.</p>
-          </div>
-          
-          
+    </header>
+    <main>
+      <!-- Email -->
+      <section class="flex-grow pl-64">
+        <div class="container mx-auto">
+          <form id="emailForm" class="max-w-md mx-auto my-8 p-6 bg-white rounded-md shadow-md">
+            <h2 class="text-center text-lg font-medium mb-4">Completa el formulario para ver tu Dashboard</h2>
+            <div class="mb-4">
+              <label class="block text-gray-700 font-medium mb-2" for="email">Correo electrónico:</label>
+              <input class="border-2 border-gray-300 p-2 w-full rounded-md" type="email" id="email" name="email" required>
+            </div>
+            <div class="text-center">
+              <button class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition-all duration-300" type="submit">Enviar</button>
+            </div>
+          </form>
         </div>
-      </div>
-    </div>
-    <script src="./static/js/profile.js"></script>
+      </section>
+
+      <!-- Dashboard -->
+      <section class="flex-grow pl-64 hidden etiqueta-contenido" id="dashboard">
+        <div>
+          <h1>Dashboard general</h1>
+        </div>
+      </section>
+      <!-- My farms -->
+      <section class="flex-grow pl-64 hidden etiqueta-contenido" id="farms">
+        <div>
+          <h1>Farms</h1>
+        </div>
+      </section> 
+      <!-- Active PLans-->
+      <section class="flex-grow pl-64 hidden etiqueta-contenido" id="plans-actives">
+        <div>
+          <h1>Plans</h1>
+        </div>
+      </section>
+      <!-- Invitations -->
+      <section class="flex-grow pl-64 hidden etiqueta-contenido" id="invitations">
+        <div>
+          <h1>Invitations</h1>
+        </div>
+      </section>
+      <!-- Profile -->
+      <section class="flex-grow pl-64 hidden etiqueta-contenido" id="profile">
+        <div>
+          <h1>Profile</h1>
+        </div>
+      </section>
+    </main>
+
+    <script src="./static/js/sidebar.js"></script>
+    <script src="./static/js/auth.js"></script>
+
   </body>
 </html>
