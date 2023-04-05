@@ -70,6 +70,22 @@
                   >
                 </a>
               </li>
+              <li>
+                <a
+                  href="#buy"
+                  class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-red-500 border-l-4 border-transparent hover:border-red-500 pr-6 etiqueta-link active"
+                  style="transition: color 0.5s ease, text-shadow 0.5s ease"
+                >
+                  <span class="inline-flex justify-center items-center ml-4">
+                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-soldiers">
+                      <path d="M5 12l-1 1v6h2.5a2.5 2.5 0 0 0 0-5h-1.5M18 12l1 1v6h-2.5a2.5 2.5 0 0 1 0-5h1.5M11 3l-3 3h6l-3-3zM4.5 9h15M4.5 15h15" />
+                    </svg>
+                  </span>
+                  <span class="ml-2 text-sm tracking-wide truncate"
+                    >Buy soldiers</span
+                  >
+                </a>
+              </li>
               <li class="px-5">
                 <div class="flex flex-row items-center h-8">
                   <div class="text-sm font-light tracking-wide text-gray-500">
@@ -211,6 +227,9 @@
 
       <!-- Dashboard -->
       <section class="flex-grow pl-64 hidden etiqueta-contenido" id="dashboard">
+        <div class="ml-20 my-3">
+          <p id="welcome" class="text-2xl"></p>
+        </div>
         <div>
           <h1>Dashboard general</h1>
         </div>
@@ -243,6 +262,7 @@
 
     <script src="./static/js/sidebar.js"></script>
     <script src="./static/js/auth.js"></script>
+    <script src="./static/js/welcome.js"></script>
 
   </body>
 </html>
