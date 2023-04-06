@@ -228,16 +228,66 @@
       <!-- Dashboard -->
       <section class="flex-grow pl-64 hidden etiqueta-contenido" id="dashboard">
         <div class="ml-20 my-3">
-          <p id="welcome" class="text-2xl"></p>
+          <p id="welcome" class="text-xl text-gray-500"></p>
         </div>
-        <div>
-          <h1>Dashboard general</h1>
+        <div class="flex">
+          <div class="bg-gray-200 bg-opacity-75 shadow rounded-lg p-4 max-w-xs mx-auto">
+            <h1 class="text-2xl font-bold mb-4 text-gray-500">My BNB Balance</h1>
+            <span id="balance" class="text-xl text-gray-500 font-bold">Loading Balance...</span>
+          </div> 
+           
         </div>
+        
+ 
       </section>
       <!-- My farms -->
       <section class="flex-grow pl-64 hidden etiqueta-contenido" id="farms">
-        <div>
-          <h1>Farms</h1>
+        <div class="mx-auto max-w-5xl my-3">
+          <h1 class="text-3xl font-bold mb-8 text-gray-500">Active Soldiers Farms</h1>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Granja 1 -->
+            <div class="bg-gray-200 bg-opacity-75 shadow rounded-lg p-4">
+              <h2 class="text-xl font-bold mb-2 text-gray-500">Soldier Farm #1</h2>
+              <p class="text-md text-gray-500">Deposit: 10 BNB</p>
+              <p class="text-md text-gray-500">APY: 15%</p>
+              <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Harvest Rewards
+              </button>
+            </div>
+            <!-- Granja 2 -->
+            <div class="bg-gray-200 bg-opacity-75 shadow rounded-lg p-4">
+              <h2 class="text-xl font-bold mb-2 text-gray-500">Soldier Farm #2</h2>
+              <p class="text-md text-gray-500">Deposit: 20 BNB</p>
+              <p class="text-md text-gray-500">APY: 20%</p>
+              <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Harvest Rewards
+              </button>
+            </div>
+            <!-- Granja 3 -->
+            <div class="bg-gray-200 bg-opacity-75 shadow rounded-lg p-4">
+              <h2 class="text-xl font-bold mb-2 text-gray-500">Soldier Farm #3</h2>
+              <p class="text-md text-gray-500">Deposit: 30 BNB</p>
+              <p class="text-md text-gray-500">APY: 25%</p>
+              <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Harvest Rewards
+              </button>
+            </div>
+            <!-- Granja 4 -->
+            <div class="bg-gray-200 bg-opacity-75 shadow rounded-lg p-4">
+              <h2 class="text-xl font-bold mb-2 text-gray-500">Soldier Farm #4</h2>
+              <p class="text-md text-gray-500">Deposit: 40 BNB</p>
+              <p class="text-md text-gray-500">APY: 30%</p>
+              <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Harvest Rewards
+              </button>
+            </div>
+          </div>
+          <div class="mt-8">
+            <h3 class="text-xl font-bold mb-2 text-gray-500">No Active Solado Farms</h3>
+            <p class="text-md text-gray-500">
+              You currently don't have any active Solado Farms. Go to the purchase section to buy some.
+            </p>
+          </div>
         </div>
       </section> 
       <!-- Active PLans-->
@@ -263,6 +313,6 @@
     <script src="./static/js/sidebar.js"></script>
     <script src="./static/js/auth.js"></script>
     <script src="./static/js/welcome.js"></script>
-
-  </body>
+    <script src="./static/js/get_balance.js"></script>
+  </body> 
 </html>
