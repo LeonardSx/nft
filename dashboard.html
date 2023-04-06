@@ -25,201 +25,260 @@
     <link rel="stylesheet" href="./static/css/build.css" />
     <script src="./static/js/metamask.web3.js"></script>
     <script src="./static/js/tailwindcss.js"></script>
-    <script src="./static/js/logout.js"></script> 
+    <script src="./static/js/logout.js"></script>
+
   </head>
   <body>
-    
     <header class="flex flex-col antialiased text-gray-800">
-        <div class="fixed top-0 left-0 w-64 h-full border-r ">
-          <div class="flex items-center justify-center h-14 border-b">
-            <div>Cyber brigade farm BNB</div>
-          </div>
-          <div class="overflow-y-auto overflow-x-hidden flex-grow">
-            <ul class="flex flex-col py-4 space-y-1">
-              <li class="px-5">
-                <div class="flex flex-row items-center h-8">
-                  <div class="text-sm font-light tracking-wide text-gray-500">
-                    Menu
-                  </div>
-                </div>
-              </li>
-              <li>
-                <a
-                  href="#dashboard"
-                  class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-red-500 border-l-4 border-transparent hover:border-red-500 pr-6 etiqueta-link active"
-                  style="transition: color 0.5s ease, text-shadow 0.5s ease"
-                >
-                  <span class="inline-flex justify-center items-center ml-4">
-                    <svg
-                      class="w-5 h-5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-                      ></path>
-                    </svg>
-                  </span>
-                  <span class="ml-2 text-sm tracking-wide truncate"
-                    >Dashboard</span
-                  >
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#buy"
-                  class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-red-500 border-l-4 border-transparent hover:border-red-500 pr-6 etiqueta-link active"
-                  style="transition: color 0.5s ease, text-shadow 0.5s ease"
-                >
-                  <span class="inline-flex justify-center items-center ml-4">
-                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-soldiers">
-                      <path d="M5 12l-1 1v6h2.5a2.5 2.5 0 0 0 0-5h-1.5M18 12l1 1v6h-2.5a2.5 2.5 0 0 1 0-5h1.5M11 3l-3 3h6l-3-3zM4.5 9h15M4.5 15h15" />
-                    </svg>
-                  </span>
-                  <span class="ml-2 text-sm tracking-wide truncate"
-                    >Buy soldiers</span
-                  >
-                </a>
-              </li>
-              <li class="px-5">
-                <div class="flex flex-row items-center h-8">
-                  <div class="text-sm font-light tracking-wide text-gray-500">
-                    Farming
-                  </div>
-                </div>
-              </li>
-              <li>
-                <a
-                  href="#farms"
-                  class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-red-500 border-l-4 border-transparent hover:border-red-500 pr-6 etiqueta-link"
-                  style="transition: color 0.5s ease, text-shadow 0.5s ease"
-                >
-                  <span class="inline-flex justify-center items-center ml-4">
-                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-farming">
-                      <path d="M5 12l5-5L19 7l-5 5M5 12l5 5l9-5l-5-5" />
-                      <path d="M5 3v6M5 21v-6M19 3v6M19 21v-6" />
-                    </svg>
-                  </span>
-                  <span class="ml-2 text-sm tracking-wide truncate">My farms</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#plans-actives"
-                  class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-red-500 border-l-4 border-transparent hover:border-red-500 pr-6 etiqueta-link"
-                  style="transition: color 0.5s ease, text-shadow 0.5s ease"
-                >
-                  <span class="inline-flex justify-center items-center ml-4">
-                    <svg                     class="w-5 h-5"
-                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plan">
-                      <path d="M4 4h16v16H4z" />
-                      <path d="M9 18l-3-3h12l-3 3" />
-                      <path d="M15 6l3 3H6l3-3" />
-                      <path d="M6 12h12M12 6v12" />
-                    </svg>
-                  </span>
-                  <span class="ml-2 text-sm tracking-wide truncate"
-                    >Active plans</span
-                  >
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#invitations"
-                  class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-red-500 border-l-4 border-transparent hover:border-red-500 pr-6 etiqueta-link"
-                  style="transition: color 0.5s ease, text-shadow 0.5s ease"
-                >
-                  <span class="inline-flex justify-center items-center ml-4">
-                    <svg class="w-5 h-5"
-                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-invitation">
-                      <path d="M16 3l6 6v12H2V3h14z" />
-                      <path d="M16 9l-4 4M12 9l4 4" />
-                      <path d="M7 14h10M7 17h10" />
-                    </svg>
-                  </span>
-                  <span class="ml-2 text-sm tracking-wide truncate"
-                    >Invitations</span
-                  >
-                </a>
-              </li>
-              <li class="px-5">
-                <div class="flex flex-row items-center h-8">
-                  <div class="text-sm font-light tracking-wide text-gray-500">
-                    Settings
-                  </div>
-                </div>
-              </li>
-              <li>
-                <a
-                  href="#profile"
-                  class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-red-500 border-l-4 border-transparent hover:border-red-500 pr-6 etiqueta-link"
-                  style="transition: color 0.5s ease, text-shadow 0.5s ease"
-                >
-                  <span class="inline-flex justify-center items-center ml-4">
-                    <svg
-                      class="w-5 h-5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                      ></path>
-                    </svg>
-                  </span>
-                  <span class="ml-2 text-sm tracking-wide truncate">Profile</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-red-500 border-l-4 border-transparent hover:border-red-500 pr-6"
-                  style="transition: color 0.5s ease, text-shadow 0.5s ease"
-                >
-                  <span class="inline-flex justify-center items-center ml-4">
-                    <svg
-                      class="w-5 h-5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
-                      ></path>
-                    </svg>
-                  </span>
-                  <span class="ml-2 text-sm tracking-wide truncate">Logout</span>
-                </a>
-              </li>
-            </ul>
-          </div>
+      <div class="fixed top-0 left-0 w-64 h-full border-r">
+        <div class="flex items-center justify-center h-14 border-b">
+          <div>Cyber brigade farm BNB</div>
         </div>
+        <div class="overflow-y-auto overflow-x-hidden flex-grow">
+          <ul class="flex flex-col py-4 space-y-1">
+            <li class="px-5">
+              <div class="flex flex-row items-center h-8">
+                <div class="text-sm font-light tracking-wide text-gray-500">
+                  Menu
+                </div>
+              </div>
+            </li>
+            <li>
+              <a
+                href="#dashboard"
+                class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-red-500 border-l-4 border-transparent hover:border-red-500 pr-6 etiqueta-link active"
+                style="transition: color 0.5s ease, text-shadow 0.5s ease"
+              >
+                <span class="inline-flex justify-center items-center ml-4">
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                    ></path>
+                  </svg>
+                </span>
+                <span class="ml-2 text-sm tracking-wide truncate"
+                  >Dashboard</span
+                >
+              </a>
+            </li>
+            <li>
+              <a
+                href="#buy"
+                class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-red-500 border-l-4 border-transparent hover:border-red-500 pr-6 etiqueta-link active"
+                style="transition: color 0.5s ease, text-shadow 0.5s ease"
+              >
+                <span class="inline-flex justify-center items-center ml-4">
+                  <svg
+                    class="w-5 h-5"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-soldiers"
+                  >
+                    <path
+                      d="M5 12l-1 1v6h2.5a2.5 2.5 0 0 0 0-5h-1.5M18 12l1 1v6h-2.5a2.5 2.5 0 0 1 0-5h1.5M11 3l-3 3h6l-3-3zM4.5 9h15M4.5 15h15"
+                    />
+                  </svg>
+                </span>
+                <span class="ml-2 text-sm tracking-wide truncate"
+                  >Buy soldiers</span
+                >
+              </a>
+            </li>
+            <li class="px-5">
+              <div class="flex flex-row items-center h-8">
+                <div class="text-sm font-light tracking-wide text-gray-500">
+                  Farming
+                </div>
+              </div>
+            </li>
+            <li>
+              <a
+                href="#farms"
+                class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-red-500 border-l-4 border-transparent hover:border-red-500 pr-6 etiqueta-link"
+                style="transition: color 0.5s ease, text-shadow 0.5s ease"
+              >
+                <span class="inline-flex justify-center items-center ml-4">
+                  <svg
+                    class="w-5 h-5"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-farming"
+                  >
+                    <path d="M5 12l5-5L19 7l-5 5M5 12l5 5l9-5l-5-5" />
+                    <path d="M5 3v6M5 21v-6M19 3v6M19 21v-6" />
+                  </svg>
+                </span>
+                <span class="ml-2 text-sm tracking-wide truncate"
+                  >My farms</span
+                >
+              </a>
+            </li>
+            <li>
+              <a
+                href="#plans-actives"
+                class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-red-500 border-l-4 border-transparent hover:border-red-500 pr-6 etiqueta-link"
+                style="transition: color 0.5s ease, text-shadow 0.5s ease"
+              >
+                <span class="inline-flex justify-center items-center ml-4">
+                  <svg
+                    class="w-5 h-5"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-plan"
+                  >
+                    <path d="M4 4h16v16H4z" />
+                    <path d="M9 18l-3-3h12l-3 3" />
+                    <path d="M15 6l3 3H6l3-3" />
+                    <path d="M6 12h12M12 6v12" />
+                  </svg>
+                </span>
+                <span class="ml-2 text-sm tracking-wide truncate"
+                  >Active plans</span
+                >
+              </a>
+            </li>
+            <li>
+              <a
+                href="#invitations"
+                class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-red-500 border-l-4 border-transparent hover:border-red-500 pr-6 etiqueta-link"
+                style="transition: color 0.5s ease, text-shadow 0.5s ease"
+              >
+                <span class="inline-flex justify-center items-center ml-4">
+                  <svg
+                    class="w-5 h-5"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-invitation"
+                  >
+                    <path d="M16 3l6 6v12H2V3h14z" />
+                    <path d="M16 9l-4 4M12 9l4 4" />
+                    <path d="M7 14h10M7 17h10" />
+                  </svg>
+                </span>
+                <span class="ml-2 text-sm tracking-wide truncate"
+                  >Invitations</span
+                >
+              </a>
+            </li>
+            <li class="px-5">
+              <div class="flex flex-row items-center h-8">
+                <div class="text-sm font-light tracking-wide text-gray-500">
+                  Settings
+                </div>
+              </div>
+            </li>
+            <li>
+              <a
+                href="#profile"
+                class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-red-500 border-l-4 border-transparent hover:border-red-500 pr-6 etiqueta-link"
+                style="transition: color 0.5s ease, text-shadow 0.5s ease"
+              >
+                <span class="inline-flex justify-center items-center ml-4">
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                    ></path>
+                  </svg>
+                </span>
+                <span class="ml-2 text-sm tracking-wide truncate">Profile</span>
+              </a>
+            </li>
+            <li>
+              <button onclick="logoutWithMetaMask()" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-red-500 border-l-4 border-transparent hover:border-red-500 pr-6"
+              style="transition: color 0.5s ease, text-shadow 0.5s ease">
+              <span class="inline-flex justify-center items-center ml-4">
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+                  ></path>
+                </svg>
+              </span>
+              <span class="ml-2 text-sm tracking-wide truncate"
+              >Logout</span
+            >
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
     </header>
     <main>
       <!-- Email -->
       <section class="flex-grow pl-64">
         <div class="container mx-auto">
-          <form id="emailForm" class="max-w-md mx-auto my-8 p-6 bg-white rounded-md shadow-md">
-            <h2 class="text-center text-lg font-medium mb-4">Completa el formulario para ver tu Dashboard</h2>
+          <form
+            id="emailForm"
+            class="max-w-md mx-auto my-8 p-6 bg-white rounded-md shadow-md"
+          >
+            <h2 class="text-center text-lg font-medium mb-4">
+              Completa el formulario para ver tu Dashboard
+            </h2>
             <div class="mb-4">
-              <label class="block text-gray-700 font-medium mb-2" for="email">Correo electrónico:</label>
-              <input class="border-2 border-gray-300 p-2 w-full rounded-md" type="email" id="email" name="email" required>
+              <label class="block text-gray-700 font-medium mb-2" for="email"
+                >Correo electrónico:</label
+              >
+              <input
+                class="border-2 border-gray-300 p-2 w-full rounded-md"
+                type="email"
+                id="email"
+                name="email"
+                required
+              />
             </div>
             <div class="text-center">
-              <button class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition-all duration-300" type="submit">Enviar</button>
+              <button
+                class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition-all duration-300"
+                type="submit"
+              >
+                Enviar
+              </button>
             </div>
           </form>
         </div>
@@ -231,73 +290,103 @@
           <p id="welcome" class="text-xl text-gray-500"></p>
         </div>
         <div class="flex">
-          <div class="bg-gray-200 bg-opacity-75 shadow rounded-lg p-4 max-w-xs mx-auto">
-            <h1 class="text-2xl font-bold mb-4 text-gray-500">My BNB Balance</h1>
-            <span id="balance" class="text-xl text-gray-500 font-bold">Loading Balance...</span>
-          </div> 
-           
+          <div
+            class="bg-gray-200 bg-opacity-75 shadow rounded-lg p-4 max-w-xs mx-auto"
+          >
+            <h1 class="text-2xl font-bold mb-4 text-gray-500">
+              My BNB Balance
+            </h1>
+            <span id="balance" class="text-xl text-gray-500 font-bold"
+              >Loading Balance...</span
+            >
+          </div>
         </div>
-        
- 
       </section>
       <!-- My farms -->
       <section class="flex-grow pl-64 hidden etiqueta-contenido" id="farms">
         <div class="mx-auto max-w-5xl my-3">
-          <h1 class="text-3xl font-bold mb-8 text-gray-500">Active Soldiers Farms</h1>
+          <h1 class="text-3xl font-bold mb-8 text-gray-500">
+            Active Soldiers Farms
+          </h1>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <!-- Granja 1 -->
             <div class="bg-gray-200 bg-opacity-75 shadow rounded-lg p-4">
-              <h2 class="text-xl font-bold mb-2 text-gray-500">Soldier Farm #1</h2>
+              <h2 class="text-xl font-bold mb-2 text-gray-500">
+                Soldier Farm #1
+              </h2>
               <p class="text-md text-gray-500">Deposit: 10 BNB</p>
               <p class="text-md text-gray-500">APY: 15%</p>
-              <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              <button
+                class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              >
                 Harvest Rewards
               </button>
             </div>
             <!-- Granja 2 -->
             <div class="bg-gray-200 bg-opacity-75 shadow rounded-lg p-4">
-              <h2 class="text-xl font-bold mb-2 text-gray-500">Soldier Farm #2</h2>
+              <h2 class="text-xl font-bold mb-2 text-gray-500">
+                Soldier Farm #2
+              </h2>
               <p class="text-md text-gray-500">Deposit: 20 BNB</p>
               <p class="text-md text-gray-500">APY: 20%</p>
-              <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              <button
+                class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              >
                 Harvest Rewards
               </button>
             </div>
             <!-- Granja 3 -->
             <div class="bg-gray-200 bg-opacity-75 shadow rounded-lg p-4">
-              <h2 class="text-xl font-bold mb-2 text-gray-500">Soldier Farm #3</h2>
+              <h2 class="text-xl font-bold mb-2 text-gray-500">
+                Soldier Farm #3
+              </h2>
               <p class="text-md text-gray-500">Deposit: 30 BNB</p>
               <p class="text-md text-gray-500">APY: 25%</p>
-              <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              <button
+                class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              >
                 Harvest Rewards
               </button>
             </div>
             <!-- Granja 4 -->
             <div class="bg-gray-200 bg-opacity-75 shadow rounded-lg p-4">
-              <h2 class="text-xl font-bold mb-2 text-gray-500">Soldier Farm #4</h2>
+              <h2 class="text-xl font-bold mb-2 text-gray-500">
+                Soldier Farm #4
+              </h2>
               <p class="text-md text-gray-500">Deposit: 40 BNB</p>
               <p class="text-md text-gray-500">APY: 30%</p>
-              <button class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              <button
+                class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              >
                 Harvest Rewards
               </button>
             </div>
           </div>
           <div class="mt-8">
-            <h3 class="text-xl font-bold mb-2 text-gray-500">No Active Solado Farms</h3>
+            <h3 class="text-xl font-bold mb-2 text-gray-500">
+              No Active Solado Farms
+            </h3>
             <p class="text-md text-gray-500">
-              You currently don't have any active Solado Farms. Go to the purchase section to buy some.
+              You currently don't have any active Solado Farms. Go to the
+              purchase section to buy some.
             </p>
           </div>
         </div>
-      </section> 
+      </section>
       <!-- Active PLans-->
-      <section class="flex-grow pl-64 hidden etiqueta-contenido" id="plans-actives">
+      <section
+        class="flex-grow pl-64 hidden etiqueta-contenido"
+        id="plans-actives"
+      >
         <div>
           <h1>Plans</h1>
         </div>
       </section>
       <!-- Invitations -->
-      <section class="flex-grow pl-64 hidden etiqueta-contenido" id="invitations">
+      <section
+        class="flex-grow pl-64 hidden etiqueta-contenido"
+        id="invitations"
+      >
         <div>
           <h1>Invitations</h1>
         </div>
@@ -314,5 +403,5 @@
     <script src="./static/js/auth.js"></script>
     <script src="./static/js/welcome.js"></script>
     <script src="./static/js/get_balance.js"></script>
-  </body> 
+  </body>
 </html>
