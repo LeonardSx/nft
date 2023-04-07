@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="./static/css/build.css" />
     <script src="./static/js/metamask.web3.js"></script>
     <script src="./static/js/tailwindcss.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.js"></script>
   </head>
   <body>
     <!-- Navbar -->
@@ -583,61 +584,61 @@
               </div>
             </div>
             <div
-            class="border border-red-500 bg-red-500 bg-opacity-0 p-6 mx-5 my-10 max-w-xs rounded-md"
-          >
-            <div class="items-center">
-              <img
-                class=""
-                src="https://i.postimg.cc/ZnC8FpG7/yellow.png"
-                alt=""
-              />
-            </div>
-            <div class="text-center my-2">
-              <span class="text-white">Crypto Commander</span>
-            </div>
-            <div
-              class="border border-red-500 bg-red-500 bg-opacity-10 rounded-md p-3"
+              class="border border-red-500 bg-red-500 bg-opacity-0 p-6 mx-5 my-10 max-w-xs rounded-md"
             >
-              <p class="text-white text-center">
-                A powerful Binance Smart Chain (BSC) token that rewards
-                holders with high yields and automatic liquidity generation.
-              </p>
-            </div>
-            <div class="text-center mt-5">
-              <div
-                class="flex flex-row items-center justify-center bg-red-400 rounded-md p-3"
-              >
+              <div class="items-center">
                 <img
-                  class="w-6 h-6 mr-2"
-                  src="https://cryptologos.cc/logos/binance-coin-bnb-logo.png"
-                  alt="BNB logo"
+                  class=""
+                  src="https://i.postimg.cc/ZnC8FpG7/yellow.png"
+                  alt=""
                 />
-                <span class="text-white font-bold">0.000001 BNB</span>
+              </div>
+              <div class="text-center my-2">
+                <span class="text-white">Crypto Commander</span>
+              </div>
+              <div
+                class="border border-red-500 bg-red-500 bg-opacity-10 rounded-md p-3"
+              >
+                <p class="text-white text-center">
+                  A powerful Binance Smart Chain (BSC) token that rewards
+                  holders with high yields and automatic liquidity generation.
+                </p>
+              </div>
+              <div class="text-center mt-5">
+                <div
+                  class="flex flex-row items-center justify-center bg-red-400 rounded-md p-3"
+                >
+                  <img
+                    class="w-6 h-6 mr-2"
+                    src="https://cryptologos.cc/logos/binance-coin-bnb-logo.png"
+                    alt="BNB logo"
+                  />
+                  <span class="text-white font-bold">0.000001 BNB</span>
+                </div>
+              </div>
+              <div class="text-center">
+                <button
+                  class="text-center py-3 px-8 border border-red-600 bg-red-500 my-5 rounded-md font-bold text-white hover:bg-red-600 transition duration-300 ease-in-out transform hover:scale-105"
+                >
+                  <span class="flex items-center justify-center">
+                    <span class="mr-2">Buy Now</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-6 w-6"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm0-2a6 6 0 100-12 6 6 0 000 12z"
+                        clip-rule="evenodd"
+                      />
+                      <path d="M6 10h8v1H6v-1z" />
+                    </svg>
+                  </span>
+                </button>
               </div>
             </div>
-            <div class="text-center">
-              <button
-                class="text-center py-3 px-8 border border-red-600 bg-red-500 my-5 rounded-md font-bold text-white hover:bg-red-600 transition duration-300 ease-in-out transform hover:scale-105"
-              >
-                <span class="flex items-center justify-center">
-                  <span class="mr-2">Buy Now</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-6 w-6"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm0-2a6 6 0 100-12 6 6 0 000 12z"
-                      clip-rule="evenodd"
-                    />
-                    <path d="M6 10h8v1H6v-1z" />
-                  </svg>
-                </span>
-              </button>
-            </div>
-          </div>
           </div>
         </div>
       </section>
@@ -648,20 +649,207 @@
         <div class="text-center">
           <h3 class="text-white text-3xl">Frequently Asked Questions</h3>
         </div>
-        <div class=""></div>
-      </section>
-      <hr class="border-red-500 border-t-2" />
+        <div
+          id="accordion-collapse"
+          data-accordion="collapse"
+          class="my-5 mx-80"
+        >
+          <div class="border-b border-red-500 dark:border-gray-600">
+            <h2 id="accordion-collapse-heading-1">
+              <button
+                type="button"
+                class="flex items-center justify-between w-full p-5 font-medium text-left text-red-500 border border-b-0 border-red-500 rounded-t-xl focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
+                data-accordion-target="#accordion-collapse-body-1"
+                aria-expanded="true"
+                aria-controls="accordion-collapse-body-1"
+              >
+                <span>How does BNB farming work?</span>
+                <svg
+                  data-accordion-icon
+                  class="w-6 h-6 rotate-180 shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+            </h2>
 
-      <!-- Contact -->
-      <section class="py-24 bg-[#161616]" id="contact">
-        <div class="lg:flex items-center justify-center mx-auto">
-          <div
-            class="mb-12 lg:mb-0 lg:w-2/3 px-12 items-center justify-center border border-dashed"
-          >
-            <div class="mt-8 items-center- justify-center mx-auto">
-              <div></div>
+            <div
+              id="accordion-collapse-body-1"
+              class="hidden"
+              aria-labelledby="accordion-collapse-heading-1"
+            >
+              <div
+                class="p-5 border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900"
+              >
+                <p class="mb-2 text-gray-500 dark:text-gray-400">
+                  BNB farming is a method of generating income through staking
+                  Binance Coin. Some projects allow users to deposit their BNB
+                  and earn rewards in the form of project tokens. To start
+                  farming BNB, you'll need a Metamask account and connect it to
+                  the farming platform you're using. Once connected, you can
+                  deposit your BNB and begin earning rewards based on the
+                  project's staking and reward structure.
+                </p>
+              </div>
+            </div>
+            <h2 id="accordion-collapse-heading-2">
+              <button
+                type="button"
+                class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-b-0 border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
+                data-accordion-target="#accordion-collapse-body-2"
+                aria-expanded="false"
+                aria-controls="accordion-collapse-body-2"
+              >
+                <span
+                  >How can I increase my earnings using soldiers'
+                  boosters?</span
+                >
+                <svg
+                  data-accordion-icon
+                  class="w-6 h-6 shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+            </h2>
+            <div
+              id="accordion-collapse-body-2"
+              class="hidden"
+              aria-labelledby="accordion-collapse-heading-2"
+            >
+              <div
+                class="p-5 border border-b-0 border-gray-200 dark:border-gray-700"
+              >
+                <p class="mb-2 text-gray-500 dark:text-gray-400">
+                  Soldiers' boosters are tools that allow you to increase the
+                  speed of your farming process, which in turn can help you
+                  generate higher income. You can purchase them through our
+                  platform and connect them to your Metamask account to activate
+                  them automatically. The more powerful the booster, the faster
+                  you can generate income in the farming process.
+                </p>
+              </div>
+            </div>
+            <h2 id="accordion-collapse-heading-3">
+              <button
+                type="button"
+                class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-gray-200 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800"
+                data-accordion-target="#accordion-collapse-body-3"
+                aria-expanded="false"
+                aria-controls="accordion-collapse-body-3"
+              >
+                <span
+                  >How can I sign up and create an account on Metamask?</span
+                >
+                <svg
+                  data-accordion-icon
+                  class="w-6 h-6 shrink-0"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+            </h2>
+            <div
+              id="accordion-collapse-body-3"
+              class="hidden"
+              aria-labelledby="accordion-collapse-heading-3"
+            >
+              <div
+                class="p-5 border border-t-0 border-gray-200 dark:border-gray-700"
+              >
+                <p class="mb-2 text-gray-500 dark:text-gray-400">
+                  To create a Metamask account, follow these steps:
+                </p>
+                <p class="mb-2 text-gray-500 dark:text-gray-400">
+                  1. Install the Metamask extension on your web browser.
+                </p>
+                <p class="mb-2 text-gray-500 dark:text-gray-400">
+                  2. Create a new Metamask account and save your recovery phrase
+                  in a safe place.
+                </p>
+                <ul class="pl-5 text-gray-500 list-disc dark:text-gray-400">
+                  <li>
+                    <a
+                      href="#home"
+                      class="text-blue-600 dark:text-blue-500 hover:underline"
+                      >3. Connect your Metamask account to our platform and
+                      start farming BNB.</a
+                    >
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
+        </div>
+      </section>
+      <hr class="border-red-500 border-t-2" />
+      <!-- Contact -->
+      <section class="py-20 bg-[#161616]" id="contact">
+        <div class="max-w-md mx-auto mt-10 bg-gray-900 rounded-md shadow-lg">
+          <form class="p-6 space-y-6">
+            <h2 class="text-2xl font-bold text-white mb-4">Contact Us</h2>
+            <div>
+              <label for="name" class="block text-white font-semibold mb-2"
+                >Name:</label
+              >
+              <input
+                id="name"
+                type="text"
+                name="name"
+                class="w-full px-4 py-2 rounded-md border border-gray-600 focus:border-red-500 focus:ring-2 focus:ring-red-500 bg-gray-800 text-white placeholder-gray-500 placeholder-opacity-75 focus:outline-none"
+              />
+            </div>
+            <div>
+              <label for="email" class="block text-white font-semibold mb-2"
+                >Email:</label
+              >
+              <input
+                id="email"
+                type="email"
+                name="email"
+                class="w-full px-4 py-2 rounded-md border border-gray-600 focus:border-red-500 focus:ring-2 focus:ring-red-500 bg-gray-800 text-white placeholder-gray-500 placeholder-opacity-75 focus:outline-none"
+              />
+            </div>
+            <div>
+              <label for="message" class="block text-white font-semibold mb-2"
+                >Message:</label
+              >
+              <textarea
+                id="message"
+                name="message"
+                class="w-full px-4 py-2 rounded-md border border-gray-600 focus:border-red-500 focus:ring-2 focus:ring-red-500 bg-gray-800 text-white placeholder-gray-500 placeholder-opacity-75 focus:outline-none"
+              ></textarea>
+            </div>
+            <div class="flex items-center justify-end">
+              <button
+                type="submit"
+                class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md transition-colors duration-300 font-bold"
+              >
+                Send
+              </button>
+            </div>
+          </form>
         </div>
       </section>
     </main>
