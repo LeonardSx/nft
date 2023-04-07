@@ -40,7 +40,6 @@ const menuLoggedIn = document.getElementById("menu-logged-in");
 
 function setLoggedIn() {
   connectButton.classList.add("hidden");
-  menuLoggedIn.classList.remove("hidden");
 }
 
 function setLoggedOut() {
