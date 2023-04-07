@@ -36,24 +36,7 @@ async function signRequestPayload(payload) {
 }
 
 const connectButton = document.getElementById("connectButton");
-const menuLoggedIn = document.getElementById("menu-logged-in");
 
-function setLoggedIn() {
-  connectButton.classList.add("hidden");
-}
-
-function setLoggedOut() {
-  connectButton.classList.remove("hidden");
-}
-
-async function validateConnection() {
-  const userWalletAddress = window.localStorage.getItem("userWalletAddress");
-  if (userWalletAddress) {
-    setLoggedIn();
-  } else {
-    setLoggedOut();
-  }
-}
 
 async function connectWithMetaMask() {
   try {
@@ -79,16 +62,12 @@ async function connectWithMetaMask() {
     const data = await response.json();
     window.localStorage.setItem("userWalletAddress", userWalletAddress);
 
-    validateConnection();
-    console.log("Connected with MetaMask");
     window.location.href = "dashboard.html";
   } catch (error) {
     console.error(error);
   }
 }
 
-
-validateConnection();
 
 connectButton.addEventListener("click", () => {
   if (connectButton.classList.contains("hidden")) {
